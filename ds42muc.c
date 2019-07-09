@@ -397,7 +397,7 @@ void convert_music(FILE *fp, uint32_t music, uint32_t ch, const char *chname,
                 }
                 break;
             case 0xf1:
-                ll -= fprintf(fp, "v%d", d[o++]);
+                ll -= fprintf(fp, "v%u", d[o++]);
                 break;
             case 0xf2:
                 // ll -= fprintf(fp, "q%d", d[o++]);
@@ -439,7 +439,7 @@ void convert_music(FILE *fp, uint32_t music, uint32_t ch, const char *chname,
             case 0xf6:
             case 0xfd:
                 DBG("{%04x:%04x}", o - 1, o + 4 - get_word(&d[o + 2]));
-                ll -= fprintf(fp, "]%d", d[o++]);
+                ll -= fprintf(fp, "]%u", d[o++]);
                 ssg_mixer = 0xff;
                 ssg_noise = 0xff;
                 o++;

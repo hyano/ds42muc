@@ -388,7 +388,7 @@ void convert_music(FILE *fp, uint32_t music, uint32_t ch, const char *chname,
                 if ((c>>6) != ssg_mixer)
                 {
                     ssg_mixer = c >> 6;
-                    ll -= fprintf(fp, "P%u", ssg_mixer & 0x02 ? 1 : 2);
+                    ll -= fprintf(fp, "P%u", (ssg_mixer & 0x02) ? 1 : 2);
                 }
                 if ((c&0x1f) != ssg_noise)
                 {
@@ -411,7 +411,7 @@ void convert_music(FILE *fp, uint32_t music, uint32_t ch, const char *chname,
                 if ((c>>6) != ssg_mixer)
                 {
                     ssg_mixer = c >> 6;
-                    ll -= fprintf(fp, "P%u", ssg_mixer & 0x02 ? 1 : 2);
+                    ll -= fprintf(fp, "P%u", (ssg_mixer & 0x02) ? 1 : 2);
                 }
                 if ((c&0x1f) != ssg_noise)
                 {
